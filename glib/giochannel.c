@@ -688,6 +688,8 @@ g_io_add_watch_full (GIOChannel    *channel,
  **/
 /**
  * GIOCondition:
+ * @G_IO_CONDITION_NONE: No condition set (not practically useful to pass
+ *  to g_io_add_watch(), included for completeness). Since: 2.74
  * @G_IO_IN: There is data to read.
  * @G_IO_OUT: Data can be written (without blocking).
  * @G_IO_PRI: There is urgent data to read.
@@ -944,6 +946,7 @@ g_io_channel_get_line_term (GIOChannel *channel,
  **/
 /**
  * GIOFlags:
+ * @G_IO_FLAG_NONE: no special flags set. Since: 2.74
  * @G_IO_FLAG_APPEND: turns on append mode, corresponds to %O_APPEND
  *     (see the documentation of the UNIX open() syscall)
  * @G_IO_FLAG_NONBLOCK: turns on nonblocking mode, corresponds to

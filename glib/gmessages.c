@@ -293,6 +293,7 @@ myInvalidParameterHandler(const wchar_t *expression,
 
 /**
  * GLogLevelFlags:
+ * @G_LOG_FLAG_NONE: no flags set. Since: 2.74
  * @G_LOG_FLAG_RECURSION: internal flag
  * @G_LOG_FLAG_FATAL: internal flag
  * @G_LOG_LEVEL_ERROR: log level for errors, see g_error().

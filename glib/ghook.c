@@ -71,6 +71,7 @@
 
 /**
  * GHookFlagMask:
+ * @G_HOOK_FLAG_NONE: No flags set. Since: 2.74
  * @G_HOOK_FLAG_ACTIVE: set if the hook has not been destroyed
  * @G_HOOK_FLAG_IN_CALL: set if the hook is currently being run
  * @G_HOOK_FLAG_MASK: A mask covering all bits reserved for

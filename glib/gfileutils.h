@@ -65,6 +65,7 @@ typedef enum
  */
 typedef enum
 {
+  G_FILE_TEST_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_FILE_TEST_IS_REGULAR    = 1 << 0,
   G_FILE_TEST_IS_SYMLINK    = 1 << 1,
   G_FILE_TEST_IS_DIR        = 1 << 2,

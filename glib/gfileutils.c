@@ -188,6 +188,8 @@
 
 /**
  * GFileTest:
+ * @G_FILE_TEST_NONE: No tests (not practically useful to pass to
+ *  g_file_test(), included for completeness). Since 2.74
  * @G_FILE_TEST_IS_REGULAR: %TRUE if the file is a regular file
  *     (not a directory). Note that this test will also return %TRUE
  *     if the tested file is a symlink to a regular file.

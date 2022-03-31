@@ -38,6 +38,7 @@ typedef struct _GNode		GNode;
 /* Tree traverse flags */
 typedef enum
 {
+  G_TRAVERSE_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_TRAVERSE_LEAVES     = 1 << 0,
   G_TRAVERSE_NON_LEAVES = 1 << 1,
   G_TRAVERSE_ALL        = G_TRAVERSE_LEAVES | G_TRAVERSE_NON_LEAVES,

@@ -849,6 +849,8 @@ g_node_depth_traverse_level (GNode             *node,
 
 /**
  * GTraverseFlags:
+ * @G_TRAVERSE_NONE: no nodes are visited (not practically useful,
+ *  included for completeness). Since 2.74
  * @G_TRAVERSE_LEAVES: only leaf nodes should be visited. This name has
  *                     been introduced in 2.6, for older version use
  *                     %G_TRAVERSE_LEAFS.

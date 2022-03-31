@@ -52,6 +52,7 @@ typedef void		(*GHookFinalizeFunc)	(GHookList      *hook_list,
 						 GHook          *hook);
 typedef enum
 {
+  G_HOOK_FLAG_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_HOOK_FLAG_ACTIVE	    = 1 << 0,
   G_HOOK_FLAG_IN_CALL	    = 1 << 1,
   G_HOOK_FLAG_MASK	    = 0x0f

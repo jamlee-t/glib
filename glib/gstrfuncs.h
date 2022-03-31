@@ -38,6 +38,7 @@ G_BEGIN_DECLS
 
 /* Functions like the ones in <ctype.h> that are not affected by locale. */
 typedef enum {
+  G_ASCII_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_ASCII_ALNUM  = 1 << 0,
   G_ASCII_ALPHA  = 1 << 1,
   G_ASCII_CNTRL  = 1 << 2,

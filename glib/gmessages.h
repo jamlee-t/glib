@@ -53,6 +53,7 @@ gsize	g_printf_string_upper_bound (const gchar* format,
 typedef enum
 {
   /* log flags */
+  G_LOG_FLAG_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_LOG_FLAG_RECURSION          = 1 << 0,
   G_LOG_FLAG_FATAL              = 1 << 1,
 
