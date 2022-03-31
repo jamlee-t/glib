@@ -107,6 +107,7 @@ typedef gboolean (*GSignalAccumulator)	(GSignalInvocationHint *ihint,
 /* --- run, match and connect types --- */
 /**
  * GSignalFlags:
+ * @G_SIGNAL_DEFAULT: Default behaviour (no special flags)
  * @G_SIGNAL_RUN_FIRST: Invoke the object method handler in the first emission stage.
  * @G_SIGNAL_RUN_LAST: Invoke the object method handler in the third emission stage.
  * @G_SIGNAL_RUN_CLEANUP: Invoke the object method handler in the last emission stage.
@@ -135,6 +136,7 @@ typedef gboolean (*GSignalAccumulator)	(GSignalInvocationHint *ihint,
  */
 typedef enum
 {
+  G_SIGNAL_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_SIGNAL_RUN_FIRST	= 1 << 0,
   G_SIGNAL_RUN_LAST	= 1 << 1,
   G_SIGNAL_RUN_CLEANUP	= 1 << 2,
@@ -155,9 +157,11 @@ typedef enum
 #define G_SIGNAL_FLAGS_MASK  0x1ff
 /**
  * GConnectFlags:
- * @G_CONNECT_AFTER: whether the handler should be called before or after the
- *  default handler of the signal.
- * @G_CONNECT_SWAPPED: whether the instance and data should be swapped when
+ * @G_CONNECT_DEFAULT: Default behaviour (no special flags). Since: 2.74
+ * @G_CONNECT_AFTER: If set, the handler should be called after the
+ *  default handler of the signal. Normally, the handler is called before
+ *  the default handler.
+ * @G_CONNECT_SWAPPED: If set, the instance and data should be swapped when
  *  calling the handler; see g_signal_connect_swapped() for an example.
  * 
  * The connection flags are used to specify the behaviour of a signal's 
@@ -165,11 +169,14 @@ typedef enum
  */
 typedef enum
 {
+  G_CONNECT_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_CONNECT_AFTER	= 1 << 0,
   G_CONNECT_SWAPPED	= 1 << 1
 } GConnectFlags;
 /**
  * GSignalMatchType:
+ * @G_SIGNAL_MATCH_NONE: All signals are matched (not practically useful,
+ *  included for completeness). Since: 2.74
  * @G_SIGNAL_MATCH_ID: The signal id must be equal.
  * @G_SIGNAL_MATCH_DETAIL: The signal detail must be equal.
  * @G_SIGNAL_MATCH_CLOSURE: The closure must be the same.
@@ -183,6 +190,7 @@ typedef enum
  */
 typedef enum
 {
+  G_SIGNAL_MATCH_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_SIGNAL_MATCH_ID	   = 1 << 0,
   G_SIGNAL_MATCH_DETAIL	   = 1 << 1,
   G_SIGNAL_MATCH_CLOSURE   = 1 << 2,
@@ -505,7 +513,7 @@ void   g_signal_chain_from_overridden_handler (gpointer           instance,
  * Returns: the handler ID, of type #gulong (always greater than 0 for successful connections)
  */
 #define g_signal_connect(instance, detailed_signal, c_handler, data) \
-    g_signal_connect_data ((instance), (detailed_signal), (c_handler), (data), NULL, (GConnectFlags) 0)
+    g_signal_connect_data ((instance), (detailed_signal), (c_handler), (data), NULL, G_CONNECT_DEFAULT)
 /**
  * g_signal_connect_after:
  * @instance: the instance to connect to.

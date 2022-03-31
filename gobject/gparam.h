@@ -115,6 +115,7 @@ G_BEGIN_DECLS
 /* --- flags --- */
 /**
  * GParamFlags:
+ * @G_PARAM_DEFAULT: no flags set. Since: 2.74.
  * @G_PARAM_READABLE: the parameter is readable
  * @G_PARAM_WRITABLE: the parameter is writable
  * @G_PARAM_READWRITE: alias for %G_PARAM_READABLE | %G_PARAM_WRITABLE
@@ -151,6 +152,7 @@ G_BEGIN_DECLS
  */
 typedef enum
 {
+  G_PARAM_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_PARAM_READABLE            = 1 << 0,
   G_PARAM_WRITABLE            = 1 << 1,
   G_PARAM_READWRITE           = (G_PARAM_READABLE | G_PARAM_WRITABLE),
