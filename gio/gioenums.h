@@ -581,6 +581,7 @@ typedef enum {
 
 /**
  * GAskPasswordFlags:
+ * @G_ASK_PASSWORD_NONE: No flags. Since: 2.74
  * @G_ASK_PASSWORD_NEED_PASSWORD: operation requires a password.
  * @G_ASK_PASSWORD_NEED_USERNAME: operation requires a username.
  * @G_ASK_PASSWORD_NEED_DOMAIN: operation requires a domain.
@@ -593,6 +594,7 @@ typedef enum {
  * situation.
  **/
 typedef enum {
+  G_ASK_PASSWORD_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_ASK_PASSWORD_NEED_PASSWORD           = (1 << 0),
   G_ASK_PASSWORD_NEED_USERNAME           = (1 << 1),
   G_ASK_PASSWORD_NEED_DOMAIN             = (1 << 2),
@@ -1576,6 +1578,7 @@ typedef enum {
 
 /**
  * GTlsCertificateFlags:
+ * @G_TLS_CERTIFICATE_FLAGS_NONE: No flags. Since: 2.74
  * @G_TLS_CERTIFICATE_UNKNOWN_CA: The signing certificate authority is
  *   not known.
  * @G_TLS_CERTIFICATE_BAD_IDENTITY: The certificate does not match the
@@ -1607,6 +1610,7 @@ typedef enum {
  * Since: 2.28
  */
 typedef enum {
+  G_TLS_CERTIFICATE_FLAGS_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_TLS_CERTIFICATE_UNKNOWN_CA    = (1 << 0),
   G_TLS_CERTIFICATE_BAD_IDENTITY  = (1 << 1),
   G_TLS_CERTIFICATE_NOT_ACTIVATED = (1 << 2),
