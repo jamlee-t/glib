@@ -107,7 +107,7 @@ typedef gboolean (*GSignalAccumulator)	(GSignalInvocationHint *ihint,
 /* --- run, match and connect types --- */
 /**
  * GSignalFlags:
- * @G_SIGNAL_DEFAULT: Default behaviour (no special flags)
+ * @G_SIGNAL_DEFAULT: Default behaviour (no special flags). Since: 2.74
  * @G_SIGNAL_RUN_FIRST: Invoke the object method handler in the first emission stage.
  * @G_SIGNAL_RUN_LAST: Invoke the object method handler in the third emission stage.
  * @G_SIGNAL_RUN_CLEANUP: Invoke the object method handler in the last emission stage.
